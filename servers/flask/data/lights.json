@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2013年11月28日",
+    "our_type": "IBC-F5WH-A15K",
+    "supplier": "光宜信",
+    "short_description": "F5高亮白光",
+    "original_type": "L-5T47UWC",
+    "full_description": "F5 White LED",
+    "volt": "3.5-4.0",
+    "light": "14000-19000",
+    "length": "0.29,0.30",
+    "price": "¥0.1800",
+    "to_toplight_cny": "¥0.2000",
+    "to_toplight_usd": "\\",
+    "mail_date": "",
+    "misc": "含税"
+  },
+  {
+    "date": "2013年11月29日",
+    "our_type": "IBC-F5BL-A6K",
+    "supplier": "光宜信",
+    "short_description": "F5蓝光",
+    "original_type": "L-514UBC",
+    "full_description": "F5 Blue LED",
+    "volt": "3.2-4.0",
+    "light": "6000",
+    "length": "465",
+    "price": "¥0.1750",
+    "to_toplight_cny": "¥0.1900",
+    "to_toplight_usd": "\\",
+    "mail_date": "\\",
+    "misc": "\\"
+  },
+  {
+    "date": "2013年11月30日",
+    "our_type": "IBC-F5UY-A10K",
+    "supplier": "光宜信",
+    "short_description": "F5高亮黄光",
+    "original_type": "L-513UYC",
+    "full_description": "F5 Yellow LED",
+    "volt": "1.9-2.2",
+    "light": "10000",
+    "length": "590",
+    "price": "¥0.1900",
+    "to_toplight_cny": "¥0.2000",
+    "to_toplight_usd": "\\",
+    "mail_date": "",
+    "misc": "\\"
+  }
+]
