@@ -25,6 +25,7 @@ app.debug = True
 PORT = 44555
 
 ColorsManager = CollectionManager("colors.json")
+LightsManager = CollectionManager("lights.json")
 PeopleManager = CollectionManager("people.json")
 ProductsManager = CollectionManager("products.json")
 
@@ -69,7 +70,8 @@ def get_json_response(data):
 
 @app.route("/")
 def root():
-    return render_template("index.html")
+    # return render_template("index.html")
+    return render_template("rhtml-lights.html")
 
 @app.route("/colors")
 def colors_page():
@@ -146,7 +148,6 @@ def colors():
         data = get_filters_data(request)
     except MissingFilters:
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
-
     result = ColorsManager.get_catalog(data)
     return get_json_response(result)
 
@@ -159,6 +160,16 @@ def people():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     result = PeopleManager.get_catalog(data)
+    return get_json_response(result)
+
+@app.route("/api/lights", methods=["OPTIONS", "GET", "POST"])
+def lights():
+    # get the input data from the client:
+    try:
+        data = get_filters_data(request)
+    except MissingFilters:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+    result = LightsManager.get_catalog(data)
     return get_json_response(result)
 
 @app.route("/<path:path>")
