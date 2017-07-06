@@ -33,7 +33,7 @@ class ListUtils:
         :param criteria: sort criteria
         :return:
         """
-        if isinstance(criteria, str):
+        if isinstance(criteria, str) or isinstance(criteria, unicode):
             criteria = ListUtils.parse_sort_by(criteria)
         # assume that properties are in order of importance, sorting must be from less important
         # to most important property:
