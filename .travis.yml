@@ -15,6 +15,8 @@ script:
 - gulp dev-init
 
 before_deploy:
+- cd "${TRAVIS_BUILD_DIR}"
+- tar xvf secrets.tar
 - eval "$(ssh-agent -s)"
 - chmod 600 wmb-lights-data.key
 - ssh-add wmb-lights-data.key
@@ -22,4 +24,6 @@ deploy:
   provider: script
   script: "./deploy.sh"
   on:
-    branch: master
+    branch:
+      - master
+      - dev
