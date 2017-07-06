@@ -180,4 +180,4 @@ def static_proxy(path):
 if __name__ == "__main__":
     # send_static_file will guess the correct MIME type
     print("...serving static files from: {}".format(pat))
-    app.run(port=PORT, threaded=True)
+    app.run(host='0.0.0.0', port=PORT, threaded=True)

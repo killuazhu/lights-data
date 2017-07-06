@@ -46,3 +46,5 @@ demos/*
 /servers/flask/.vscode*
 /servers/flask/.idea*
 *.pyc
+*.key
+*.pub
