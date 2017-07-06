@@ -85,6 +85,7 @@ class ListUtils:
                     # TODO: support better non-strings with their culture-dependent representations
                     if rx.search(item[x]):
                         result.append(item)
+                        break
             else:
                 for p in properties:
                     if rx.search(item[p]):
