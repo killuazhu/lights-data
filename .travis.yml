@@ -21,6 +21,7 @@ before_deploy:
 - chmod 600 wmb-lights-data.key
 - ssh-add wmb-lights-data.key
 deploy:
+  skip_cleanup: true
   provider: script
   script: "./deploy.sh"
   on:
