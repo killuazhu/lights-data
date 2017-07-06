@@ -11,6 +11,7 @@ before_script:
 - cd source
 - npm install gulp --save-dev
 script:
+- npm install
 - gulp dev-init
 
 before_deploy:
