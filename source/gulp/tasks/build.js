@@ -18,8 +18,8 @@ gulp.task("js-build", () => {
   config.esToJs.forEach(o => {
     var filename = o.filename + ".js";
     browserify(o.entry, { debug: true })
-      .transform(babelify, { 
-        sourceMaps: true 
+      .transform(babelify, {
+        sourceMaps: true
       })
       .bundle()
       .on(_error_, err => console.log(err))
@@ -28,12 +28,12 @@ gulp.task("js-build", () => {
   });
 });
 
-gulp.task("dist", () => {
+gulp.task("js-dist", () => {
   config.esToJs.forEach(o => {
     var filename = o.filename + ".js";
     browserify(o.entry, { debug: false })
-      .transform(babelify, { 
-        sourceMaps: false 
+      .transform(babelify, {
+        sourceMaps: false
       })
       .bundle()
       .on(_error_, err => console.log(err))
@@ -64,8 +64,8 @@ gulp.task("js-min", () => {
   config.esToJs.forEach(o => {
     var filename = o.filename + ".min.js";
     browserify(o.entry, { debug: false })
-      .transform(babelify, { 
-        sourceMaps: false 
+      .transform(babelify, {
+        sourceMaps: false
       })
       .bundle()
       .on(_error_, err => console.log(err))
