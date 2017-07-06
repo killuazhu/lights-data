@@ -37,7 +37,8 @@ export default {
 
   findDiacritics(s) {
     if (!s) return s;
-    var rx = /[^\u0000-\u007E]/gm;
+
+    var rx = /[\u0300-\u036F]|[\u1AB0–\u1AFF]|[\u1DC0–\uDFF]|[\u20D0–\u20FF]|[\uFE20\uFE2F]/gm;
     var a = [], m;
     while (m = rx.exec(s)) {
       a.push({
@@ -181,7 +182,7 @@ export default {
   /**
    * Returns a value indicating whether the given string starts with the second
    * given string.
-   * 
+   *
    * @param {string} String to check
    * @param {string} Start value
    * @param {boolean} Case insensitive?
