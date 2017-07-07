@@ -38,13 +38,15 @@ export default {
   findDiacritics(s) {
     if (!s) return s;
 
-    var rx = /[\u0300-\u036F]|[\u1AB0–\u1AFF]|[\u1DC0–\uDFF]|[\u20D0–\u20FF]|[\uFE20\uFE2F]/gm;
+    var rx = /[^\u0000-\u007E]/gm;
     var a = [], m;
     while (m = rx.exec(s)) {
-      a.push({
-        i: m.index,
-        v: m[0]
-      });
+      if (normalize(m[0]) != m[0]){
+        a.push({
+          i: m.index,
+          v: m[0]
+        });
+      }
     }
     return a;
   },
