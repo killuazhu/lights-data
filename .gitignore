@@ -38,7 +38,7 @@ jspm_packages
 
 **/env/*
 **/__pycache__/*
-httpdocs/*
+# httpdocs/*
 .vscode/*
 demos/*
 /source/copy_to_demo.sh
