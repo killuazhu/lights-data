@@ -3,7 +3,7 @@ Light data for Mengbai
 
 # Deploy
 
-1. Copy all files in branch `easy-deploy` to a Linux server (Ubuntu 16.04 is preferred which should have `python3` installed by default)
+1. Copy all files in branch [easy-deploy](https://github.com/killuazhu/lights-data/blob/easy-deploy) to a Linux server (Ubuntu 16.04 is preferred which should have `python3` installed by default)
 2. Run `./start.sh` will start the process and serve website at `http://<ip>:44555`
 3. To stop website and python process, run `./stop.sh`
 4. To check if website is running, run `./running.sh`
