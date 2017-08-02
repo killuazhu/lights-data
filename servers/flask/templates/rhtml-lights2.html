@@ -1,0 +1,44 @@
+{%- extends "layout.html" -%}
+{%- block title -%}
+  Light data sheet
+{%- endblock -%}
+{%- block body -%}
+  {% include "partials/themes.html" %}
+  <div id="main"></div>
+{%- endblock -%}
+{%- block js -%}
+  <script>
+  (function () {
+    var table = window.table = new KingTable({
+      id: "lights-table",
+      url: "/api/lights2",
+      caption: "Lights data sheet",
+      element: document.getElementById("main"),
+      minSearchChars: 1,
+      columns: {
+        // 填写日期	我司对外型号	供应商	中文简述	原厂型号	描述	电压	亮度	波长（nm)或色温	采购价格	对Toplight人民币	对Toplight美金	邮件日期	备注
+        date: "填写日期",
+        our_type: "我司对外型号",
+        supplier: "供应商",
+        short_description: "中文简述",
+        original_type: "原厂型号",
+        full_description: "描述",
+        volt: "电压",
+        light: "亮度",
+        length: "波长(nm)或色温",
+        price: "采购价格",
+        to_toplight_cny: "对Toplight人民币",
+        to_toplight_usd: "对Toplight美金",
+        mail_date: "邮件日期",
+        misc: "备注"
+      }
+    });
+
+    table.render().then(function () {
+      console.log("ok :)");
+    }, function () {
+      console.log("noo :(");
+    });
+  })();
+  </script>
+{%- endblock -%}

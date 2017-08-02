@@ -25,6 +25,7 @@ app.debug = True
 PORT = 44555
 
 LightsManager = CollectionManager("lights.json")
+LightsManager2 = CollectionManager("lights2.json")
 
 #   {{ resources("sharedjs")|safe }}
 plain_text = {"Content-Type": "text/plain"}
@@ -64,10 +65,17 @@ def get_json_response(data):
     res.headers.add("Cache-Control", "max-age=%s" % max_age)
     return res
 
-
 @app.route("/")
 def root():
     return render_template("rhtml-lights.html")
+
+@app.route("/lights")
+def lightspage():
+    return render_template("rhtml-lights.html")
+
+@app.route("/lights2")
+def lights2page():
+    return render_template("rhtml-lights2.html")
 
 @app.route("/api/lights", methods=["OPTIONS", "GET", "POST"])
 def lights():
@@ -78,6 +86,17 @@ def lights():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
     result = LightsManager.get_catalog(data)
     return get_json_response(result)
+
+@app.route("/api/lights2", methods=["OPTIONS", "GET", "POST"])
+def lights2():
+    # get the input data from the client:
+    try:
+        data = get_filters_data(request)
+    except MissingFilters:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+    result = LightsManager2.get_catalog(data)
+    return get_json_response(result)
+
 
 @app.route("/<path:path>")
 def static_proxy(path):
