@@ -12,7 +12,7 @@ installDep() {
   fi
 
   cd $BASEDIR/servers/flask;
-  pip install -q -r requirements.txt;
+  pip install -r requirements.txt;
 }
 
 running() {
@@ -28,7 +28,7 @@ stop() {
   # Kill existing process
   if pgrep -fal "server.py" > /dev/null; then
     echo "Stopping existing website"
-    pkill -fal "server.py";
+    pkill -f "server.py";
   fi
 }
 
